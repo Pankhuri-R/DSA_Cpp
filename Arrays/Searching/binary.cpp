@@ -33,9 +33,6 @@ int main(){
         cin>>arr[i];
     }
     sort(arr,arr+n);
-    for(int i=0;i<n;i++){
-        cout<<arr[i]<<" ";
-    }
     cout<<"Enter key: ";
     cin>>key;
     cout<<key<<" is found at index "<<binarySearch(arr,n,key);
