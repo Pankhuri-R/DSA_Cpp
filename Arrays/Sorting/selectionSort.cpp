@@ -1,7 +1,6 @@
 //find the minimum element in the array and swap with the first element of the unsorted array
 
 #include<iostream>
-#include<climits>
 
 using namespace std;
 
@@ -12,7 +11,6 @@ void print(int arr[],int n){
 }
 
 void selection(int arr[],int n){
-    int minNo=INT_MAX;
     for(int i=0;i<n-1;i++){
         for(int j=i+1;j<n;j++){
             if (arr[j]<arr[i])
