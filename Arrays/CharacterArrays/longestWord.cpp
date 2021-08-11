@@ -38,6 +38,7 @@ int main(){
         i++;
     }
     cout<<maxLen<<endl;
+    cout<<"The maximum length word is:";
     for (int i = 0; i < maxLen; i++)
     {
         cout<<arr[i+maxst];
