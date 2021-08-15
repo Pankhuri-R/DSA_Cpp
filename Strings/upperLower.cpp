@@ -23,5 +23,9 @@ int main(){
 
     cout<<"Lowercase:"<<s1<<endl;
     
+    //using transform
+    transform(s1.begin(),s1.end(),s1.begin(),::toupper);
+    cout<<endl<<s1;
+
     return 0;
 }
