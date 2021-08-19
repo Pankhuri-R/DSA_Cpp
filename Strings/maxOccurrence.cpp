@@ -29,7 +29,7 @@ int main(){
         
     }
 
-    cout<<maxF<<":"<<ans<<endl;
+    cout<<ans<<":"<<maxF<<endl;
     
     return 0;
 }
