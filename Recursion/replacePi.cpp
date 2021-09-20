@@ -2,28 +2,31 @@
 
 using namespace std;
 
-void replace(string s, int i)
+void replace(string s)
 {
-    if (i == s.length())
+    if (s.length() == 0)
     {
         return;
     }
 
-    if (s[i] == 'p' && s[i + 1] == 'i')
+    if (s[0] == 'p' && s[1] == 'i')
     {
         cout << "3.14";
-        i = i + 2;
+
+        replace(s.substr(2));
     }
-    cout << s[i];
-    replace(s, (i + 1));
+    else
+    {
+        cout << s[0];
+        replace(s.substr(1));
+    }
 }
 
 int main()
 {
     string s;
-    int i = 0;
     cout << "Enter the string: ";
     cin >> s;
-    replace(s, i);
+    replace(s);
     return 0;
 }
