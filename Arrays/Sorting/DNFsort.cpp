@@ -8,6 +8,7 @@
 //if arr[mid]=0 => swap arr[low] and arr[mid], low++ & mid ++
 //if arr[mid]=1 => mid++
 //if arr[mid]=2 => swap arr[mid] & arr[high],  high--
+//O(N)
 
 #include <bits\stdc++.h>
 
