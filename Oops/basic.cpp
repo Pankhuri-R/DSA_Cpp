@@ -10,9 +10,26 @@ public:
     int age;
     bool gender;
 
-    Student(string s)
+    //Default constructor
+    Student()
     {
+        cout << "Default constructor called" << endl;
+    }
+
+    Student(string s, int a, int g)
+    {
+        cout << "Parameterized constructor called" << endl;
         name = s;
+        age = a;
+        gender = g;
+    }
+
+    Student(Student &s)
+    {
+        cout << "Copy constructor called" << endl;
+        name = s.name;
+        age = s.age;
+        gender = s.gender;
     }
 
     void setName(string s)
@@ -53,7 +70,9 @@ int main()
     //     arr[i].printInfo();
     // }
 
-    Student a("Dave");
-    a.getName();
+    Student a("Dave", 20, 0);
+    a.printInfo();
+    Student b;
+    Student c = a;
     return 0;
 }
