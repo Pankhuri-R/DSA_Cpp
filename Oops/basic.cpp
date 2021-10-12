@@ -4,10 +4,16 @@ using namespace std;
 
 class Student
 {
-public:
     string name;
+
+public:
     int age;
     bool gender;
+
+    void setName(string s)
+    {
+        name = s;
+    }
 
     void printInfo()
     {
@@ -22,8 +28,10 @@ int main()
     Student arr[3];
     for (int i = 0; i < 3; i++)
     {
+        string s;
         cout << "Name=";
-        cin >> arr[i].name;
+        cin >> s;
+        arr[i].setName(s);
         cout << "Age= ";
         cin >> arr[i].age;
         cout << "Gender=";
