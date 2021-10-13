@@ -53,6 +53,16 @@ public:
         cout << "Age=" << age << endl;
         cout << "Gender=" << gender << endl;
     }
+
+    bool operator==(Student &a)
+    {
+        if (name == a.name && age == a.age && gender == a.gender)
+        {
+            return true;
+        }
+
+        return false;
+    }
 };
 
 int main()
@@ -76,8 +86,18 @@ int main()
     // }
 
     Student a("Dave", 20, 0); // parameterized constructor
-    a.printInfo();
+    // a.printInfo();
     Student b;     // default constructor
     Student c = a; //copy constructor
+
+    if (c == a)
+    {
+        cout << "Same\n";
+    }
+    else
+    {
+        cout << "Not same\n";
+    }
+
     return 0;
 }
