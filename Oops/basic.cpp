@@ -32,6 +32,11 @@ public:
         gender = s.gender;
     }
 
+    ~Student()
+    {
+        cout << "Destructor called\n";
+    }
+
     void setName(string s)
     {
         name = s;
@@ -70,9 +75,9 @@ int main()
     //     arr[i].printInfo();
     // }
 
-    Student a("Dave", 20, 0);
+    Student a("Dave", 20, 0); // parameterized constructor
     a.printInfo();
-    Student b;
-    Student c = a;
+    Student b;     // default constructor
+    Student c = a; //copy constructor
     return 0;
 }
