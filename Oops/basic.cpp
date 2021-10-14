@@ -24,6 +24,7 @@ public:
         gender = g;
     }
 
+    //copy constructor
     Student(Student &s)
     {
         cout << "Copy constructor called" << endl;
@@ -32,6 +33,7 @@ public:
         gender = s.gender;
     }
 
+    //Destructor
     ~Student()
     {
         cout << "Destructor called\n";
