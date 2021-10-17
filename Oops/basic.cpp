@@ -33,6 +33,8 @@ public:
         gender = s.gender;
     }
 
+    //Move constructor
+
     //Destructor
     ~Student()
     {
