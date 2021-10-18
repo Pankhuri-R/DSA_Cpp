@@ -10,7 +10,7 @@ public:
     int age;
     bool gender;
 
-    //Default constructor
+    // Default constructor
     Student()
     {
         cout << "Default constructor called" << endl;
@@ -24,7 +24,7 @@ public:
         gender = g;
     }
 
-    //copy constructor
+    // copy constructor
     Student(Student &s)
     {
         cout << "Copy constructor called" << endl;
@@ -33,9 +33,7 @@ public:
         gender = s.gender;
     }
 
-    //Move constructor
-
-    //Destructor
+    // Destructor
     ~Student()
     {
         cout << "Destructor called\n";
@@ -92,7 +90,7 @@ int main()
     Student a("Dave", 20, 0); // parameterized constructor
     // a.printInfo();
     Student b;     // default constructor
-    Student c = a; //copy constructor
+    Student c = a; // copy constructor
 
     if (c == a)
     {
