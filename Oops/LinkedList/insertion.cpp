@@ -35,15 +35,24 @@ void insertAtTail(node *&head, int val)
     temp->next = n;
 }
 
+void insertAtHead(node *&head, int val)
+{
+    node *n = new node(val);
+
+    n->next = head;
+    head = n;
+}
+
 void display(node *head)
 {
     node *temp = head;
 
     while (temp != NULL)
     {
-        cout << temp->data << " ";
+        cout << temp->data << "->";
         temp = temp->next;
     }
+    cout << "NULL" << endl;
 }
 
 int main()
@@ -52,6 +61,8 @@ int main()
     insertAtTail(head, 1);
     insertAtTail(head, 2);
     insertAtTail(head, 3);
+    display(head);
+    insertAtHead(head, 4);
     display(head);
     return 0;
 }
