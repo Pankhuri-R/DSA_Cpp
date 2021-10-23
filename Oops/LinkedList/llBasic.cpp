@@ -58,6 +58,25 @@ bool search(node *head, int key)
     return false;
 }
 
+void deleteNode(node *&head, int val)
+{
+    if (head == NULL)
+    {
+        return;
+    }
+
+    node *temp = head;
+
+    while (temp->next->data != val)
+    {
+        temp = temp->next;
+    }
+
+    node *todelete = temp->next;
+
+    temp->next = temp->next->next;
+}
+
 void display(node *head)
 {
     node *temp = head;
@@ -81,5 +100,7 @@ int main()
     display(head);
     cout << search(head, 2) << endl;
     cout << search(head, 5) << endl;
+    deleteNode(head, 2);
+    display(head);
     return 0;
 }
