@@ -73,6 +73,12 @@ void deleteNode(node *&head, int val)
         return;
     }
 
+    if (head->next == NULL)
+    {
+        deleteAtHead(head);
+        return;
+    }
+
     node *temp = head;
 
     while (temp->next->data != val)
