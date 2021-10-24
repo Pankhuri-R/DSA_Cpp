@@ -27,7 +27,7 @@ node *reverse(node *&head)
         current->next = previous;
         previous = current;
         current = nextptr;
-        }
+    }
     head = previous;
 
     return head;
@@ -53,6 +53,23 @@ void insertAtTail(node *&head, int val)
     temp->next = n;
 }
 
+//recursive method
+
+node *reverseRecursive(node *&head)
+{
+
+    if (head == NULL || head->next == NULL)
+    {
+        return head;
+    }
+
+    node *newHead = reverseRecursive(head->next);
+    head->next->next = head;
+    head->next = NULL;
+
+    return newHead;
+}
+
 void display(node *head)
 {
     node *temp = head;
@@ -72,9 +89,9 @@ int main()
     insertAtTail(head, 2);
     insertAtTail(head, 3);
     insertAtTail(head, 4);
-    // display(head);
-
-    node *newHead = reverse(head);
+    display(head);
+    // node *newHead = reverse(head);
+    node *newHead = reverseRecursive(head);
     display(newHead);
 
     return 0;
