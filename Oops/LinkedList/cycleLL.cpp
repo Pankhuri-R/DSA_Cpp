@@ -87,6 +87,27 @@ bool detectCycle(node *&head)
     return false;
 }
 
+void removeCycle(node *&head)
+{
+    node *slow = head;
+    node *fast = head;
+
+    do
+    {
+        slow = slow->next;
+        fast = fast->next->next;
+    } while (slow != fast);
+
+    fast = head;
+    while (slow->next != fast->next)
+    {
+        slow = slow->next;
+        fast = fast->next;
+    }
+
+    slow->next = NULL;
+}
+
 int main()
 {
     node *head = NULL;
@@ -97,8 +118,10 @@ int main()
     insertAtTail(head, 5);
     insertAtTail(head, 6);
     makeCycle(head, 3);
-    // display(head);
-    cout << detectCycle(head);
+    cout << detectCycle(head) << endl;
+    removeCycle(head);
+    cout << detectCycle(head) << endl;
+    display(head);
 
     return 0;
 }
