@@ -68,7 +68,7 @@ void display(node *head)
 
     do
     {
-        cout << temp->data << "->";
+        cout << temp->data << " ";
         temp = temp->next;
     } while (temp != head);
 }
@@ -83,6 +83,9 @@ int main()
         insertAtTail(head, arr1[i]);
     }
 
+    display(head);
+    cout << endl;
+    insertAtHead(head, 5);
     display(head);
     return 0;
 }
