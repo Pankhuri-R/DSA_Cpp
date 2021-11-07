@@ -109,7 +109,14 @@ public:
             q2.push(q1.front());
             q1.pop();
         }
-        return q1.front();
+        int ans = q1.front();
+        q2.push(ans);
+
+        queue<int> temp = q1;
+        q1 = q2;
+        q2 = temp;
+
+        return ans;
     }
 
     int size()
