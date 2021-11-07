@@ -53,5 +53,6 @@ int main()
     preorder(root);
     cout << endl;
     inorder(root);
+    cout << endl;
     return 0;
 }
