@@ -57,9 +57,70 @@ public:
     }
 };
 
+//method2 - making pop costly
+
+class Stackk
+{
+    int N;
+    queue<int> q1;
+    queue<int> q2;
+
+public:
+    Stackk()
+    {
+        N = 0;
+    }
+
+    void push(int val)
+    {
+        q1.push(val);
+        N++;
+    }
+
+    void pop()
+    {
+        if (q1.empty())
+        {
+            return;
+        }
+
+        while (q1.size() != 1)
+        {
+            q2.push(q1.front());
+            q1.pop();
+        }
+        q1.pop();
+        N--;
+
+        queue<int> temp = q1;
+        q1 = q2;
+        q2 = temp;
+    }
+
+    int top()
+    {
+        if (q1.empty())
+        {
+            cout << "No elements \n";
+            return -1;
+        }
+        while (q1.size() != 1)
+        {
+            q2.push(q1.front());
+            q1.pop();
+        }
+        return q1.front();
+    }
+
+    int size()
+    {
+        return N;
+    }
+};
+
 int main()
 {
-    Stack st;
+    Stackk st;
     st.push(1);
     st.push(2);
     st.push(3);
