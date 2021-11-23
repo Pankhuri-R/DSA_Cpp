@@ -29,6 +29,23 @@ int calcHeight(Node *root)
     return max(lHeight, rHeight) + 1;
 }
 
+int calcDia(Node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    int lHeight = calcHeight(root->left);
+    int rHeight = calcHeight(root->right);
+
+    int currDia = lHeight + rHeight + 1;
+
+    int lDiameter = calcDia(root->left);
+    int rDiameter = calcDia(root->right);
+
+    return max(currDia, max(lDiameter, rDiameter));
+}
+
 int main()
 {
     struct Node *root = new Node(1);
@@ -42,5 +59,6 @@ int main()
     root->right->right = new Node(7);
 
     cout << calcHeight(root) << endl;
+    cout << calcDia(root);
     return 0;
 }
